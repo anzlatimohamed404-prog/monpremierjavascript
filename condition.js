@@ -29,10 +29,10 @@ if(ageTelespectateur >= 18) {  // si l'age est moins égal ou superieur a 18
 
 // la condition avec if else
 let pointPermis = 12;
- if(pointPermis =12){
+ if(pointPermis =12){ // si le point de permis est stictement egal a 12
     alert("vous avez un bonus!");
 
 
- } else{
-    alert("vous avez des malus!");
+ } else{ // sinon
+    alert("vous avez des malus!"); 
  }   
