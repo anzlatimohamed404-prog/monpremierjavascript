@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulaire âge</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background:#948a8a; }
+    form { background:#e8c8d5; padding:20px; border-radius:8px; width:300px; }
+    label { display:block; margin-top:10px; font-weight:bold; }
+    input, select { width:100%; padding:6px; margin-top:4px; }
+    #age { margin-top:15px; font-weight:bold; }
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+    
+
+  </style>
+</head>
+<body>
+
+<form>
+  <label>Nom :</label>
+  <input type="text" id="nom">
+
+  <label>Prénom :</label>
+  <input type="text" id="prenom">
+
+  <label>Situation :</label>
+  <select id="situation">
+    <option>--Sélectionnez--</option>
+    <option>Étudiant</option>
+    <option>Salarié</option>
+  </select>
+
+  <label>Année de naissance :</label>
+  <select id="annee"></select>
+
+  <div id="age">Votre âge : </div>
+</form>
+
+<script>
+const annee = document.getElementById('annee'), ageDiv = document.getElementById('age');
+const currentYear = new Date().getFullYear();
+
+// Remplir les années automatiquement
+for(let y=currentYear; y>=1900; y--){
+  let o = document.createElement('option');
+  o.value = o.textContent = y;
+  annee.appendChild(o);
+}
+
+// Afficher l'âge automatiquement
+annee.addEventListener('change', ()=> {
+  let birth = parseInt(annee.value);
+  ageDiv.textContent = isNaN(birth) ? 'Votre âge :' : `Votre âge : ${currentYear-birth} ans`;
+});
+</script>
+
+</body>
+</html>
