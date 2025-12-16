@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="calcul-age.css">
   
 </head>
-<body>
-</header>
 
+<body>
 
   <section>
     <article>
@@ -37,7 +36,7 @@
         <li class="commune">Mtsamboro</li>
       </ol>
 
-  <form>
+    <form>
         <h2>calcul-age</h2>
 
     <div id="recensement">
@@ -63,27 +62,11 @@
       <div id="age">Votre âge : </div>
       <br>
         <input type="button" value="valider" id="boutonValider">
-   
 
-  </form>
-
-  <script>
-        const annee = document.getElementById('annee'), ageDiv = document.getElementById('age');
-        const currentYear = new Date().getFullYear();
-
-    // Remplir les années automatiquement
-    for(let y=currentYear; y>=1900; y--){
-        let o = document.createElement('option');
-        o.value = o.textContent = y;
-        annee.appendChild(o);
-    }
-
-    // Afficher l'âge automatiquement
-    annee.addEventListener('change', ()=> {
-        let birth = parseInt(annee.value);
-        ageDiv.textContent = isNaN(birth) ? 'Votre âge :' : `Votre âge : ${currentYear-birth} ans`;
-    });
-  </script>
+    </form>
+  </article>
+  </section>
+  <!-- Ma deuxiéme tentative de création de section-->
 
 
   </body>

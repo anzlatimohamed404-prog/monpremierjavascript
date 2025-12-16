@@ -71,4 +71,42 @@ for(let i = 0; i < elementClassCommune.length; i++) {
     
 }
 
+/**j'insére des balises dans lz fichier html grace au code javascript */
+let elementSection = document.createElement("section");
+
+let elementBody = document.querySelector('body');
+// je récupére la balise <body> , puis je stock <body> dans la variable elementBody.
+
+elementBody.appendChild(elementSection);
+
+let nouveauTitre = document.createElement("h3");
+
+nouveauTitre.textContent = "Mon titre de la section";
+
+elementSection.appendChild(nouveauTitre);
+
+// j'ai créer un élement(balise)npmmé<maman>
+let elementMaman = document.createElement("maman");
+
+elementBody.appendChild(elementMaman);
+
+let nouveauTitre2 = document.createElement("h3");
+
+nouveauTitre2.textContent = "bonjour maman";
+
+elementSection.appendChild(nouveauTitre2);
+
+let elementImg = document.createElement("img");
+
+elementImg.src = "image_rsma.png";
+elementImage.setAttribute("alt", "image rsma");
+elementImage.className = "image rsma";
+elementImage.classList.add("image" );
+
+// supprimer une classe de l'élément img
+elementImage.classList.remove("image3");
+
+// j'insere l'image dans le body
+elementBody.appendChild(elementImg);
+
 

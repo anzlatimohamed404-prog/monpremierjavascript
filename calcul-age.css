@@ -59,5 +59,8 @@ body { font-family: Arial; padding: 30px; background:#948a8a; }
     input, select { width:100%; padding:6px; margin-top:4px; }
     #age { margin-top:15px; font-weight:bold; }
     body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+
+
+    
     
 

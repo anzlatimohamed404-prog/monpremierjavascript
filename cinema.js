@@ -13,3 +13,4 @@ let nom1 = "Dupont";
 let texteAffichage = `Bonjour ${nom1}, votre film ${ticket.nomFilm} est en salle ${ ticket.numeroSalle}`;
 // Affichage dans la console
 console.log(texteAffichage);
+
