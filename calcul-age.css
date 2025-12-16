@@ -33,12 +33,12 @@ input, select {
 
 button {
     margin-top: 16px;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     background: #97567e;
     color: rgb(30, 26, 26);
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -50,7 +50,14 @@ button:hover {
 
 #resultat {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
+body { font-family: Arial; padding: 30px; background:#948a8a; }
+    form { background:#e8c8d5; padding:20px; border-radius:8px; width:300px; }
+    label { display:block; margin-top:10px; font-weight:bold; }
+    input, select { width:100%; padding:6px; margin-top:4px; }
+    #age { margin-top:15px; font-weight:bold; }
+    body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+    
 

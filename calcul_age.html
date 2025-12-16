@@ -4,56 +4,61 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulaire âge</title>
-  <style>
-    body { font-family: Arial; padding: 30px; background:#948a8a; }
-    form { background:#e8c8d5; padding:20px; border-radius:8px; width:300px; }
-    label { display:block; margin-top:10px; font-weight:bold; }
-    input, select { width:100%; padding:6px; margin-top:4px; }
-    #age { margin-top:15px; font-weight:bold; }
-    body { display: flex; justify-content: center; align-items: center; height: 100vh; }
-    
 
-  </style>
+  <script src="dom_calcul_age.js" defer></script>
+  <link rel="stylesheet" href="calcul-age.css">
+  
 </head>
 <body>
 
-<form>
-  <label>Nom :</label>
-  <input type="text" id="nom">
+  <form>
+        <h2>calcul-age</h2>
 
-  <label>Prénom :</label>
-  <input type="text" id="prenom">
+    <div id="recensement">
+        <p id="paragraphe1">Nous récensons 1 appulation de Mayotte.</p>
+    </div>
 
-  <label>Situation :</label>
-  <select id="situation">
-    <option>--Sélectionnez--</option>
-    <option>Étudiant</option>
-    <option>Salarié</option>
-  </select>
+        <label>Nom :</label>
+        <input type="text" id="nom">
 
-  <label>Année de naissance :</label>
-  <select id="annee"></select>
+        <label>Prénom :</label>
+        <input type="text" id="prenom">
 
-  <div id="age">Votre âge : </div>
-</form>
+        <label>Situation :</label>
+      <select id="situation">
+        <option>--Sélectionnez--</option>
+        <option>Étudiant/te</option>
+        <option>Salarié</option>
+      </select>
 
-<script>
-const annee = document.getElementById('annee'), ageDiv = document.getElementById('age');
-const currentYear = new Date().getFullYear();
+        <label>Année de naissance :</label>
+        <select id="annee"></select>
 
-// Remplir les années automatiquement
-for(let y=currentYear; y>=1900; y--){
-  let o = document.createElement('option');
-  o.value = o.textContent = y;
-  annee.appendChild(o);
-}
+      <div id="age">Votre âge : </div>
+      <br>
+        <input type="button" value="valider" id="boutonValider">
+   
 
-// Afficher l'âge automatiquement
-annee.addEventListener('change', ()=> {
-  let birth = parseInt(annee.value);
-  ageDiv.textContent = isNaN(birth) ? 'Votre âge :' : `Votre âge : ${currentYear-birth} ans`;
-});
-</script>
+  </form>
 
-</body>
+  <script>
+        const annee = document.getElementById('annee'), ageDiv = document.getElementById('age');
+        const currentYear = new Date().getFullYear();
+
+    // Remplir les années automatiquement
+    for(let y=currentYear; y>=1900; y--){
+        let o = document.createElement('option');
+        o.value = o.textContent = y;
+        annee.appendChild(o);
+    }
+
+    // Afficher l'âge automatiquement
+    annee.addEventListener('change', ()=> {
+        let birth = parseInt(annee.value);
+        ageDiv.textContent = isNaN(birth) ? 'Votre âge :' : `Votre âge : ${currentYear-birth} ans`;
+    });
+  </script>
+
+
+  </body>
 </html>
