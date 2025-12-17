@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulaire âge</title>
-
+  <script src="evenemment.js" defer ></script>
   <script src="dom_calcul_age.js" defer></script>
   <link rel="stylesheet" href="calcul-age.css">
   
@@ -14,6 +14,21 @@
 
   <section>
     <article>
+      <div id="date" class="date">
+        <button id="validerDate"> Date du jour </button>
+        <span id="dateDuJour"></span>
+      </div>
+
+      <p>
+        Date au format local : <span id="dateDuJourFormat2"></span>
+      </p>
+
+      <div id="fonctionFleche">
+        <button id="boutonFleche">Fonction fléchée</button>
+
+      </div>
+      
+
       <!--je liste les communes de Mayotte-->
     <h3 id="communes">communes de Mayotte</h3>
     <ol id="listCommunes">
@@ -45,7 +60,6 @@
 
         <label>Nom :</label>
         <input type="text" id="nom">
-
         <label>Prénom :</label>
         <input type="text" id="prenom">
 
@@ -58,6 +72,8 @@
 
         <label>Année de naissance :</label>
         <select id="annee"></select>
+        <p id="messageUtilisateur"> <span id="nomUtilisateur"></span>vous êtes agé de <span id="calcul-age"></span> 
+        </p>
 
       <div id="age">Votre âge : </div>
       <br>

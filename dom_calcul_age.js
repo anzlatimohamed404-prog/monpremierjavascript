@@ -99,12 +99,12 @@ elementSection.appendChild(nouveauTitre2);
 let elementImg = document.createElement("img");
 
 elementImg.src = "image_rsma.png";
-elementImage.setAttribute("alt", "image rsma");
-elementImage.className = "image rsma";
-elementImage.classList.add("image" );
+elementImg.setAttribute("alt", "RSMA Mayotte");
+elementImg.className = "image rsma";
+elementImg.classList.add("image" );
 
 // supprimer une classe de l'élément img
-elementImage.classList.remove("image3");
+elementImg.classList.remove("image3");
 
 // j'insere l'image dans le body
 elementBody.appendChild(elementImg);
