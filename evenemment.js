@@ -22,7 +22,7 @@ elementBouttonValiderDate.addEventListener("click", function() {
 // je code un évenement de type KEYDOWN.
 // l'évenement KEYDOWN va se déclancher lorsque j'appuie sur une touche de mon clavier.
 // 1. Tout d'abord, je récupére l'élement HTML qui sera associé l,évenement KEYDOWN.
-let elementButonFonctionFleche = document.querySelector("#boutonfleche");
+let elementButonFonctionFleche = document.querySelector("#boutonFleche");
 
 // 2. j'associe l'événement KEYDOWN mon élément html en utilisant la méthode addEventListener().
 // A l'intérieur de la méthod eAddEvent Listener(), je passe une fonction fléchée comme suit '()=> {}'.
@@ -48,5 +48,35 @@ elementIputNom.addEventListener("change",(event) => {
     console.log(event.target.value);
     messageSalutation = `bonjour ${event.target.value}`;
     elementSpanNomUtilisateur.textContent = messageSalutation;
-})
+});
 
+ /**
+ * Envoyer le formulaire
+ * Je vais récupérer les données saisis sur le formulaire :
+ * nom
+ * prenom
+ * situation
+ * année de naissance
+ */
+
+// je récupère la balise <form> </form> avec ses enfants; Ensuite, je stocke la balise dans la variable elementForm
+let elementForm = document.querySelector('form');
+console.log("elementForm :", elementForm);
+
+
+// J'assoccie l'événement 'submit'
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // empêche l'envoi du formulaire
+  console.log("Formulaire soumis !");
+
+ 
+  const nom = document.querySelector("#nom").value;
+  console.log("Nom saisi :", nom);
+
+  const prenom = event.target.value;
+  console.log(prenom);
+  
+
+});

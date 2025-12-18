@@ -1,112 +1,100 @@
 function afficherAge() {
 
-    // je récupére un élement (une balise) situé dans le fichier HTML (calcul_age.html)
-    // j'utlise l'identifiant pour trouver le bon élément. l'élément récupérer est ensuite
-    //stocker dans la variable elementBoutonValider.
-       
-
     let nom = document.getElementById("nom").value;
     let prenom = document.getElementById("prenom").value;
     let situation = document.getElementById("situation").value;
-    let naissance = document.getElementById("naissance").value;
+    let naissance = document.getElementById("anneeNaissance").value;
 
-    if (nom === "" || prenom === "" || situation === "" || naissance === "") {
-        document.getElementById("resultat").textContent =
+    if (nom === "" || prenom === "" || situation === "--Sélectionnez--" || naissance === "") {
+        document.getElementById("messageUtilisateur").textContent =
             "Veuillez remplir tous les champs.";
         return;
     }
 
-    let anneeActuelle = new Date().getFullYear();
-    let age = anneeActuelle - naissance;
-
-    document.getElementById("resultat").textContent =
-        `${prenom} ${nom}, vous êtes ${situation} et vous avez ${age} ans.`;
+    document.getElementById("nomUtilisateur").textContent =
+        prenom + " " + nom + ", ";
 }
 
+// Calcul automatique de l'âge selon l'année de naissance
+function calculAge() {
+    const anneeNaissance = document.getElementById("anneeNaissance").value;
+    const ageAffichage = document.getElementById("calcul-age");
+
+    if (anneeNaissance && !isNaN(anneeNaissance)) {
+        const anneeCourante = new Date().getFullYear();
+        const age = anneeCourante - parseInt(anneeNaissance);
+        ageAffichage.textContent = age + " ans";
+    } else {
+        ageAffichage.textContent = "";
+    }
+}
+
+// Récupère l'élément HTML dont l'id est "boutonValider"
 let elementBoutonValider = document.getElementById("boutonValider");
-elementBoutonValider.addEventListener("click", function(){
-    console.log("elementBoutonValider :", elementBoutonValider);
-});
-//console.log(document.getElementBYID("nom"));
-console.log(document.getElementById("nom"));
-
-console.log(document.getElementById)
-
+// Récupère l'élément HTML dont l'id est "boutonValider"
+// Ajoute un écouteur d'événement sur cet élément
+// L'événement écouté est le clic de la souris ("click")
+//addEventListener est une méthode JavaScript qui permet de dire à un élément HTML :
+//« Quand un événement se produit, exécute ce code »
+elementBoutonValider.addEventListener("click", afficherAge);
+// Affiche dans la console du navigateur le texte
+    // "elementBoutonValider :" suivi de l'élément HTML lui-même.
+console.log(document.getElementById("nom"));//le # c'est pour indique l'élément séléctionné est id
 console.log(document.title);
-
 console.log(document.head);
 
-//je récupére l'élément html (balise) dont l,identifiant est recensement.
-let elementDivRecensement = document.querySelector("#recensement");
 
+let elementDivRecensement = document.querySelector("#recensement");
 console.log(elementDivRecensement);
 
 let elementPRecensement = document.querySelector("#paragraphe1");
-
 console.log(elementPRecensement);
+    //je récupère la liste des communes de Mayotte,
+    //Puis, je stocke les communes dans la variable elementListCommunes
+let elementListCommunes = document.querySelectorAll("#listCommunes li");
 
-// je récupére la liste des communes de Mayotte,
-// puis je stocke les communes dans la variable elementListCommunes
-let elementListCommunes = document.querySelector("#listCommunes");
-
-// Ensuite, j'affiche la variable elementListCommunes
-console.log(elementListCommunes);
-
-// j'utilise la boucle for pour parcourir la liste elementListeCommunes.
-for(let i = 0; i < elementListCommunes.length; i++) {
-    console.log("### Liste communes ### ");
-    console.log(elementListCommunes [i]);
+for (let i = 0; i < elementListCommunes.length; i++) {
+    console.log("### Liste communes ###");
+    console.log(elementListCommunes[i].innerText);
 }
 
-// j'utilise queryselectorAll pour récupérer tous les membres de la meme classe.
+
 let elementClassCommune = document.querySelectorAll(".commune");
-console.log (elementClassCommune);
-
-// 
-for(let i = 0; i < elementClassCommune.length; i++) {
-    console.log (elementClassCommune [i]);
-
-    // j'affiche tout les communes.
-    console.log(elementClassCommune [i].innerText);
-    
+//J'utilise la boucle FOR pour parcourir la liste elementListCommunes
+for (let i = 0; i < elementClassCommune.length; i++) {
+    console.log(elementClassCommune[i].innerText);
 }
 
-/**j'insére des balises dans lz fichier html grace au code javascript */
 let elementSection = document.createElement("section");
-
-let elementBody = document.querySelector('body');
-// je récupére la balise <body> , puis je stock <body> dans la variable elementBody.
-
+let elementBody = document.querySelector("body");
 elementBody.appendChild(elementSection);
 
 let nouveauTitre = document.createElement("h3");
-
 nouveauTitre.textContent = "Mon titre de la section";
-
 elementSection.appendChild(nouveauTitre);
 
-// j'ai créer un élement(balise)npmmé<maman>
+// élément personnalisé
 let elementMaman = document.createElement("maman");
-
 elementBody.appendChild(elementMaman);
 
 let nouveauTitre2 = document.createElement("h3");
-
 nouveauTitre2.textContent = "bonjour maman";
-
 elementSection.appendChild(nouveauTitre2);
 
+ //J'ajoute une image
+// Je crée une balise <img>
 let elementImg = document.createElement("img");
-
 elementImg.src = "image_rsma.png";
+//possibilité "elementImage.setAttribute("image_rsma.png" );"
 elementImg.setAttribute("alt", "RSMA Mayotte");
 elementImg.className = "image rsma";
-elementImg.classList.add("image" );
-
-// supprimer une classe de l'élément img
+elementImg.classList.add("image");
 elementImg.classList.remove("image3");
 
-// j'insere l'image dans le body
+//supprimer une classe de l'élément img
 elementBody.appendChild(elementImg);
 
-
+//
+document
+    .getElementById("anneeNaissance")
+    .addEventListener("input", calculAge);

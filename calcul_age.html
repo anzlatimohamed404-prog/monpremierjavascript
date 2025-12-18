@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Formulaire âge</title>
-  <script src="evenemment.js" defer ></script>
+
+  <script src="evenemment.js" defer></script>
   <script src="dom_calcul_age.js" defer></script>
   <link rel="stylesheet" href="calcul-age.css">
-  
 </head>
 
 <body>
@@ -25,13 +24,11 @@
 
       <div id="fonctionFleche">
         <button id="boutonFleche">Fonction fléchée</button>
-
       </div>
-      
 
-      <!--je liste les communes de Mayotte-->
-    <h3 id="communes">communes de Mayotte</h3>
-    <ol id="listCommunes">
+      <!-- je liste les communes de Mayotte -->
+      <h3 id="communes">communes de Mayotte</h3>
+      <ol id="listCommunes">
         <li class="commune">koungou</li>
         <li class="commune">dzaoudzi-labatoir</li>
         <li class="commune">bouéni</li>
@@ -51,39 +48,43 @@
         <li class="commune">Mtsamboro</li>
       </ol>
 
-    <form>
+      <form>
         <h2>calcul-age</h2>
 
-    <div id="recensement">
-        <p id="paragraphe1">Nous récensons 1 appulation de Mayotte.</p>
-    </div>
+        <div id="recensement">
+          <p id="paragraphe1">Nous recensons une population de Mayotte.</p>
+        </div>
 
         <label>Nom :</label>
         <input type="text" id="nom">
+
         <label>Prénom :</label>
         <input type="text" id="prenom">
 
         <label>Situation :</label>
-      <select id="situation">
-        <option>--Sélectionnez--</option>
-        <option>Étudiant/te</option>
-        <option>Salarié</option>
-      </select>
+        <select id="situation">
+          <option>--Sélectionnez--</option>
+          <option>Étudiant/te</option>
+          <option>Salarié</option>
+        </select>
 
-        <label>Année de naissance :</label>
-        <select id="annee"></select>
-        <p id="messageUtilisateur"> <span id="nomUtilisateur"></span>vous êtes agé de <span id="calcul-age"></span> 
-        </p>
+        <div>
+          <label for="anneeNaissance">Année de naissance :</label>
+          <input type="number" id="anneeNaissance">
 
-      <div id="age">Votre âge : </div>
-      <br>
-        <input type="button" value="valider" id="boutonValider">
+          <p id="messageUtilisateur">
+            <span id="nomUtilisateur"></span>
+            vous êtes âgé de :
+            <span id="calcul-age"></span>
+          </p>
+        </div>
 
-    </form>
-  </article>
+        <br>
+        <input type="submit" value="valider" id="boutonValider">
+
+      </form>
+    </article>
   </section>
-  <!-- Ma deuxiéme tentative de création de section-->
 
-
-  </body>
+</body>
 </html>
