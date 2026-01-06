@@ -11,8 +11,15 @@ function afficherAge() {
         return;
     }
 
-    document.getElementById("nomUtilisateur").textContent =
-        prenom + " " + nom + ", ";
+     prenom = "Jean";
+     nom = "Dupont";
+
+window.onload = function() {
+    document.getElementById("nomUtilisateur").textContent = prenom + " " + nom + ", ";
+};
+
+document.getElementById("nomUtilisateur").textContent = prenom + " " + nom + ", ";
+
 }
 
 // Calcul automatique de l'âge selon l'année de naissance
@@ -99,7 +106,7 @@ document
     .getElementById("anneeNaissance")
     .addEventListener("input", calculAge);
 
-    
+
 
 // Demande des informations à l'utilisateur
 let nom = prompt("Entrez votre nom :");
@@ -118,4 +125,32 @@ if (age < 18) {
 } else {
     alert(nom + " " + prenom + ", vous êtes majeur.");
 }
+
+let elementSpankMessageeAge = document.querySelector("#age_calcule");
+ 
+// Année de naissance 
+const anneeNaissanceTest = 2007;
+
+// Année en cours
+const anneeActuelleTest = new Date().getFullYear();
+
+// Calcul de l'âge
+const ageTest = anneeActuelleTest - anneeNaissanceTest;
+
+// Affichage dans la console
+console.log("Âge (test) :", ageTest, "ans");
+
+
+age = 19;
+// Récupération de l'année actuelle
+anneeActuelle = new Date().getFullYear();
+
+// Calcul de l'année de naissance
+anneeNaissance = anneeActuelle - age;
+
+// Affichage dans la console
+console.log("Année actuelle :", anneeActuelle);
+console.log("Âge donné :", age);
+console.log("Année de naissance calculée :", anneeNaissance);
+
 
