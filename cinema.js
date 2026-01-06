@@ -1,9 +1,7 @@
 // Déclaration de l'objet ticket
 let ticket = {
     nomFilm: "Simba",
-    prix: 12,
-    numeroSalle: 5
-};
+    prix};
 
 // Déclaration d'une variable nom
 let nom1 = "Dupont";

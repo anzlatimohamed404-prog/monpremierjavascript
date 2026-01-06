@@ -98,3 +98,24 @@ elementBody.appendChild(elementImg);
 document
     .getElementById("anneeNaissance")
     .addEventListener("input", calculAge);
+
+    
+
+// Demande des informations à l'utilisateur
+let nom = prompt("Entrez votre nom :");
+let prenom = prompt("Entrez votre prénom :");
+let anneeNaissance = parseInt(prompt("Entrez votre année de naissance :"));
+
+// Récupération de l'année actuelle
+let anneeActuelle = new Date().getFullYear();
+
+// Calcul de l'âge
+let age = anneeActuelle - anneeNaissance;
+
+// Condition âge
+if (age < 18) {
+    alert(nom + " " + prenom + ", vous êtes mineur.");
+} else {
+    alert(nom + " " + prenom + ", vous êtes majeur.");
+}
+
