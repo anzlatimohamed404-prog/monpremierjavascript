@@ -22,3 +22,70 @@ p{
     border-radius: 10px;
     margin: 15px;
 }
+
+
+.horloge {
+  font-size: 48px;
+  font-family: "Courier New", monospace;
+  color: #0e0e0e;
+  background: #e9b1db;
+  padding: 15px 25px;
+  width: fit-content;
+  border-radius: 8px;
+}
+
+
+.horloge {
+    font-family: Arial, sans-serif;
+  text-align: center;
+  background: #edc0e0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.ville {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0b0a0b;
+}
+
+#heureParis {
+  font-size: 42px;
+  font-family: "Courier New", monospace;
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+
+.horloge {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #df9ebc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.ville {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#heureTokyo {
+  font-size: 42px;
+  font-family: "Courier New", monospace;
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #101010;
+  text-transform: capitalize;
+}
